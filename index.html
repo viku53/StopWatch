@@ -8,8 +8,8 @@
             00:00:00
         </div>
         <ul id="buttons">
-            <li><button class = "start" onclick="startTimer()">Start</button></li>
-            <li><button class = "stop" onclick="stopTimer()">Stop</button></li>
+            <li><button id = "start" class = "start" onclick="startTimer()">Start</button></li>
+            <li><button id = "stop" class = "stop" onclick="stopTimer()">Stop</button></li>
 
             <li><button class = "reset" onclick="resetTimer()">Reset</button></li>
         </ul>
@@ -24,6 +24,7 @@
         function startTimer() {
             if (stoptime == true) {
                 stoptime = false;
+                document.getElementById('start').disabled = true;
                 timerCycle();
             }
         }
@@ -31,6 +32,7 @@
         function stopTimer() {
             if (stoptime == false) {
                 stoptime = true;
+                document.getElementById('start').disabled = false;
             }
         }
 
